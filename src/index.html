@@ -269,6 +269,44 @@
         .custom-button:hover {
             background: #e2e8f0;
         }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .search-container {
+                width: 100%;
+                margin-right: 0;
+            }
+
+            .tabs {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .custom-button {
+                flex: 1;
+                max-width: 160px;
+            }
+
+            .attribution {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+                padding: 20px 16px;
+            }
+
+            .attribution div {
+                width: 100%;
+            }
+
+            .attribution a {
+                display: inline-block;
+                margin: 8px 10px;
+            }
+        }
     </style>
 </head>
 <body>
