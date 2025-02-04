@@ -1,0 +1,21 @@
+# Node modules
+node_modules/
+
+# IDE files
+.vscode/
+.idea/
+*.sublime-*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Backup files
+*.bak
+*~
+
+# Source files (we only need the extracted version)
+Icons index.tsx
+extract_icons.js
+extract_new.js
+old_index.html 
