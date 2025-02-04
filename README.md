@@ -11,6 +11,7 @@ A collection of beautifully crafted icons for your next project. This repository
 - Responsive grid layout
 - Dark/light mode support
 - Fullscreen mode
+- **New:** Improved button alignment and active state functionality
 
 ## Usage
 
@@ -18,7 +19,8 @@ A collection of beautifully crafted icons for your next project. This repository
 2. Use the search bar to find specific icons
 3. Click on any icon to copy its SVG code
 4. Switch between outline and solid styles using the tabs
-5. Toggle fullscreen mode for better visibility
+5. Double-click an active tab to reset and show all icons
+6. Toggle fullscreen mode for better visibility
 
 ## Icon Properties
 
