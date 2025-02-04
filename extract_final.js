@@ -1,8 +1,8 @@
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
 
 // Read the source file
-const sourceFile = fs.readFileSync('Icons index.tsx', 'utf8');
+const sourceFile = fs.readFileSync('src/js/icons.js', 'utf8');
 
 // Regular expression to match icon components
 const iconRegex = /export function (\w+Icon)\(props: IconProps\) {[\s\S]*?return \(([\s\S]*?)\);?\s*}/g;
@@ -58,9 +58,9 @@ while ((match = iconRegex.exec(sourceFile)) !== null) {
     });
 }
 
-// Generate the JavaScript code
-const jsContent = `const icons = ${JSON.stringify(icons, null, 2)};`;
+// Generate the JavaScript code with ES module export
+const jsContent = `const icons = ${JSON.stringify(icons, null, 2)};\n\nexport default icons;`;
 
-// Write the output file
-fs.writeFileSync('icons.js', jsContent);
+// Write the output file to the correct location
+fs.writeFileSync('src/js/icons.js', jsContent);
 console.log('Extracted ' + icons.length + ' icons'); 

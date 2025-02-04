@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campsite Icons</title>
+    <meta name="description" content="A collection of beautifully crafted icons for your next project">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="stylesheet" href="styles/cover.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background: white;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .header {
+            max-width: 1160px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 0, 0, 0.10);
+            box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .search-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            position: relative;
+            margin-right: 16px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 12px 20px;
+            padding-left: 40px;
+            font-size: 16px;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            outline: none;
+            transition: all 0.2s;
+            background: #f8fafc;
+        }
+
+        .search-input:focus {
+            background: #fff;
+            border-color: #000;
+            box-shadow: 0 0 0 1px #000;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            color: #64748b;
+        }
+
+        .icon-count {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 10px;
+        }
+
+        .tab {
+            padding: 0 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            background: #f8fafc;
+            color: #64748b;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 44px;
+            text-align: center;
+            line-height: 44px;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .tab.active {
+            background: #f1f5f9;
+            color: #000;
+            font-weight: 500;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 16px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .icon-card {
+            background: white;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 0, 0, 0.10);
+            box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 24px 16px 16px;
+            cursor: pointer;
+            transition: all 0.2s;
+            position: relative;
+        }
+
+        .icon-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .icon-preview {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s;
+        }
+
+        .icon-card:hover .icon-preview {
+            transform: scale(1.1);
+        }
+
+        .icon-name {
+            font-size: 13px;
+            color: #64748b;
+            text-align: center;
+            word-break: break-word;
+            margin-bottom: 16px;
+        }
+
+        .icon-actions {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            width: 100%;
+            border-top: 1px solid #f1f5f9;
+            padding-top: 12px;
+        }
+
+        .icon-button {
+            padding: 8px;
+            border: none;
+            border-radius: 6px;
+            background: transparent;
+            color: #64748b;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+        }
+
+        .icon-button:hover {
+            background: #f1f5f9;
+            color: #3b82f6;
+        }
+
+        .icon-button svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .notification {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #16a34a;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 14px;
+            z-index: 1000;
+            animation: slideUp 0.3s ease-out, fadeOut 2.5s ease-in forwards;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .attribution {
+            text-align: center;
+            padding: 20px;
+            color: #64748b;
+            font-size: 14px;
+            margin-top: 40px;
+            border-top: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 40px auto 0;
+        }
+
+        .attribution a {
+            margin: 0 10px;
+            color: #3b82f6;
+            text-decoration: none;
+        }
+
+        .attribution a:hover {
+            text-decoration: underline;
+        }
+
+        @keyframes slideUp {
+            from { transform: translate(-50%, 20px); opacity: 0; }
+            to { transform: translate(-50%, 0); opacity: 1; }
+        }
+
+        @keyframes fadeOut {
+            0%, 80% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+        .size-info {
+            color: #64748b;
+            font-size: 14px;
+            margin-left: 8px;
+        }
+
+        .custom-button {
+            padding: 12px 20px;
+            border-radius: 6px;
+            border: none;
+            background: #f8fafc;
+            color: #64748b;
+            font-size: 14px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            height: 44px;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .custom-button.active {
+            background: #e7ebf0;
+            color: #000;
+            font-weight: 500;
+        }
+
+        .custom-button:hover {
+            background: #e2e8f0;
+        }
+    </style>
+</head>
+<body>
+    <section class="cover">
+        <img src="/images/logocampsite.png" alt="Campsite logo" class="cover-logo">
+        <div class="cover-content">
+            <p>Campsite is winding down soon :(</p>
+            <p>I've always admired the craft and detail in that app.</p>
+            <p>A curated collection of 279 beautifully crafted SVG icons from the open source Campsite project. built this easy-to-use site where you can browse, search, copy, and download the icons..</p>
+            <p>Enjoy exploring the collection and remember, these icons are available for non-commercial use only. Please credit Campsite when you use them</p>
+        </div>
+        <img src="/images/splash.png" alt="Splash image" class="cover-splash">
+    </section>
+
+    <div class="header">
+        <div class="search-container">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+            <input 
+                type="text" 
+                id="searchInput" 
+                placeholder="Search all icons..." 
+                class="search-input"
+                autocomplete="off"
+            />
+        </div>
+        <div class="tabs">
+            <button class="custom-button" onclick="setActiveTab('outline')">Outline</button>
+            <button class="custom-button" onclick="setActiveTab('solid')">Solid</button>
+        </div>
+    </div>
+
+    <div class="grid" id="iconGrid"></div>
+    
+    <div class="attribution">
+        <div>
+            Curated with ❤️ by Nabil Bakour
+            <a href="https://github.com/0nabilbk" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/in/nabilbakour/" target="_blank">LinkedIn</a>
+            <a href="https://x.com/0nabilbk" target="_blank">Twitter</a>
+        </div>
+        <div>
+            Git repo by <a href="https://github.com/campsite" target="_blank">Campsite</a>
+        </div>
+    </div>
+
+    <script type="module">
+        import icons from './js/icons.js';
+
+        function createIconCard(icon) {
+            const escapedSvg = icon.svg
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, "\\'")
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;');
+            
+            return `
+                <div class="icon-card">
+                    <div class="icon-preview">${icon.svg}</div>
+                    <div class="icon-name">${icon.name}</div>
+                    <div class="icon-actions">
+                        <button class="icon-button" title="Copy SVG" onclick="copyToClipboard(\`${escapedSvg}\`)">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M8 4v12a2 2 0 002 2h8a2 2 0 002-2V7.242a2 2 0 00-.602-1.43L16.083 2.57A2 2 0 0014.685 2H10a2 2 0 00-2 2z" />
+                                <path d="M16 18v2a2 2 0 01-2 2H6a2 2 0 01-2-2V9a2 2 0 012-2h2" />
+                            </svg>
+                        </button>
+                        <button class="icon-button" title="Download SVG" onclick="downloadSVG('${icon.name}', \`${escapedSvg}\`)">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4 4m0 0l-4-4m4 4V4" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        window.copyToClipboard = function(svg) {
+            const decodedSvg = svg
+                .replace(/&quot;/g, '"')
+                .replace(/&lt;/g, '<')
+                .replace(/&gt;/g, '>');
+            
+            navigator.clipboard.writeText(decodedSvg).then(() => {
+                showNotification('✓ Copied to clipboard!');
+            }).catch(() => {
+                showNotification('❌ Failed to copy');
+            });
+        };
+
+        window.downloadSVG = function(name, svg) {
+            const decodedSvg = svg
+                .replace(/&quot;/g, '"')
+                .replace(/&lt;/g, '<')
+                .replace(/&gt;/g, '>');
+            
+            const blob = new Blob([decodedSvg], { type: 'image/svg+xml' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `${name}.svg`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            showNotification('✓ Downloaded SVG!');
+        };
+
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            setTimeout(() => notification.remove(), 2000);
+        }
+
+        function filterIcons(searchTerm) {
+            const filtered = icons.filter(icon => 
+                icon.name.toLowerCase().includes(searchTerm.toLowerCase())
+            );
+            renderIcons(filtered);
+            document.getElementById('iconCount').textContent = filtered.length;
+        }
+
+        function renderIcons(iconsToRender) {
+            const grid = document.getElementById('iconGrid');
+            grid.innerHTML = iconsToRender.map(icon => createIconCard(icon)).join('');
+        }
+
+        window.setActiveTab = function(type) {
+            const buttons = document.querySelectorAll('.custom-button');
+            const activeButton = Array.from(buttons).find(button => button.classList.contains('active'));
+
+            if (activeButton && activeButton.textContent.toLowerCase() === type) {
+                // If the active button is double-clicked, remove active state and show all icons
+                buttons.forEach(button => button.classList.remove('active'));
+                renderIcons(icons);
+                document.getElementById('iconCount').textContent = icons.length;
+            } else {
+                // Otherwise, set the clicked button as active and filter icons
+                buttons.forEach(button => {
+                    button.classList.toggle('active', button.textContent.toLowerCase() === type);
+                });
+
+                const filtered = type === 'outline' 
+                    ? icons.filter(icon => !icon.name.toLowerCase().includes('filled'))
+                    : icons.filter(icon => icon.name.toLowerCase().includes('filled'));
+
+                renderIcons(filtered);
+                document.getElementById('iconCount').textContent = filtered.length;
+            }
+        };
+
+        // Initial render
+        document.addEventListener('DOMContentLoaded', () => {
+            renderIcons(icons.filter(icon => !icon.name.toLowerCase().includes('filled')));
+            document.getElementById('iconCount').textContent = icons.length;
+            setActiveTab('outline');
+        });
+
+        // Search functionality
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            filterIcons(e.target.value);
+        });
+    </script>
+</body>
+</html> 

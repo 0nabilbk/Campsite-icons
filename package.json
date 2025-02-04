@@ -1,0 +1,34 @@
+{
+  "name": "Campsite-icons",
+  "private": true,
+  "version": "1.0.0",
+  "description": "A collection of beautifully crafted icons for your next project. This repository contains 279 icons in both outline and solid styles, optimized for use in web projects and design tools like Figma.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "start": "vite"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0nabilbk/Campsiteicons.git"
+  },
+  "keywords": [
+    "icons",
+    "svg",
+    "ui",
+    "design",
+    "campsite",
+    "figma"
+  ],
+  "author": "0nabilbk",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/0nabilbk/Campsiteicons/issues"
+  },
+  "homepage": "https://github.com/0nabilbk/Campsiteicons#readme",
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}
